@@ -28,7 +28,7 @@ gulp.task('js', () => {
 			message: "Error: <%= error.message %>",
 			title: 'oops 🙈'
 		}))
-		.pipe(source('scrips.js'))
+		.pipe(source('scripts.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest('public/scripts'))
 		.pipe(reload({stream:true}));
