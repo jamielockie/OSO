@@ -1,7 +1,7 @@
 const thisApp = {};
-thisApp.endpoint = 'https://api.github.com/search/repositories';
+thisApp.endpoint = 'https://api.github.com/search/issues';
 thisApp.userAgent = 'jamielockie'; 
-
+thisApp.token = 'c10b97525d3cb61ee37390069c16765fd75f05';
 
 thisApp.init = () => {
 	console.log("connected!");
@@ -9,13 +9,19 @@ thisApp.init = () => {
 };
 
 thisApp.getRepos = function() {
+	console.log('Ajax')
 	$.ajax({
 		url: thisApp.endpoint,
-		dataType:'jsonp',
 		method: 'GET',
+		dataType:'json',
 		data: {
-			authorization: 'Basic amFtaWVsb2NraWU6Smw1NjQ5Li4='
+			// user-agent: 'jamielockie'
+			token: thisApp.token,
+			q: `is:open label:"help wanted" label:"beginner" language:css` 
 			},
+	})
+	.then(function(res) {
+		console.log(res)
 	})
 };
 
