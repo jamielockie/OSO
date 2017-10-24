@@ -1,16 +1,13 @@
-// Colours
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 
-$body: #4caf50;
-$primary: #087f23;
-$secondary: #80e27e;
-$accent: #ffea00;
-
-$darkGrey: #222;
-$mediumGrey: #4a4a4a;
-$lightGrey: #6e6e6e;
-
-$lightText: #fff;
-
+a {
+	color: inherit;
+	text-decoration: none;
+}
 
 // MQs
 

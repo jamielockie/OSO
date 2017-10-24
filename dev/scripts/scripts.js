@@ -4,58 +4,74 @@ thisApp.userAgent = 'jamielockie';
 thisApp.token = 'c10b97525d3cb61ee37390069c16765fd75f05';
 thisApp.language = 'javascript';
 thisApp.label__primary = "beginner";
-
+// thisApp.repoArray = [];
+thisApp.repoNameArray = [];
+thisApp.repoDescArray = [];
 
 
 thisApp.init = () => {
 	thisApp.getIssues()
-		.then(thisApp.displayIssues);
+		// .then(thisApp.displayIssues);
 };
 
-thisApp.displayIssues = (issues, i) => {
-	issues.forEach((issue) => {
-		const $container = $('<li>').addClass('card__container')
+thisApp.displayIssues = (issues) => {
+	issues.forEach((issue, index) => {
+		const labels = issue.labels
+		const $container = $('<li>').addClass('card__container');
 		const $cardTitle = $('<h3>').text(issue.title);
 		const $cardByline = $('<h4>').text(issue.user.login);
 		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Repo Link</a>`);
-		
-		const $labels = $(`<p>`).text(issue.labels);
-		
-		this.issue.labels.forEach((label) => {
-			console.log(label.name)
-		});
-		// label container work 
-		// const $cardLabelContainer = $('<div>').addClass('label__container')
-		// issue.labels.forEach( function(label) {
-		// 	console.log()
-		// 	const $label = $('<p>').text(label.name);
-		// 	$cardLabelContainer.append($label)
-		// 	$('.card__container').append($cardLabelContainer)
-		// });
 
+		const $repoName = $(`<h1>`).text(thisApp.repoNameArray[index]);
+		const $repoDesc = $(`<h3>`).text(thisApp.repoDescArray[index]);
 
-		$container.append($cardTitle,$cardByline,$cardLink,$labels);
+		$container.append($cardTitle,$cardByline,$cardLink,$repoName, $repoDesc);
+		labels.forEach((label) => {
+			thisApp.labels = $(`<p>${label.name}</p>`);
+			$container.append(thisApp.labels);
+		})
 		$('.gallery').append($container);
 	});
-}
+};
 
 thisApp.getIssues = () => {
-	console.log('Ajax')
-	return $.ajax({
+	// Makes initial Ajax call to get object of issues
+	const issueCall = $.ajax({
 		url: thisApp.endpoint,
 		method: 'GET',
 		dataType:'json',
 		data: {
 			// user-agent: 'jamielockie'
-			token: thisApp.token,
-			q: `is:public label:${thisApp.label__primary} label:"help wanted" language:${thisApp.language}`,
+			// token: thisApp.token,
+			q: `is:public  label:"help wanted" label:${thisApp.label__primary} language:${thisApp.language}`,
 			// sort: 'stars',
 			},
 	})
 	.then(function(res) {
 		const issues = res.items;
-		console.log(res);
-		thisApp.displayIssues(issues)
+		res.items.forEach((repo) => {
+			let repoUrl = repo.repository_url;
+			const repoCall = $.ajax({
+				url: repoUrl,
+				method:'GET',
+				dataType: 'json',
+				data: {
+					// token: thisApp.token
+				},
+			})
+			.then(function(res) {
+				console.log(res)
+				const repoName = res.name
+				thisApp.repoNameArray.push(repoName);
+
+				const repoDesc = res.description
+				thisApp.repoDescArray.push(repoDesc) 
+			})
+		})
+		$.when(issueCall)
+			.then(function() {
+				thisApp.displayIssues(issues);
+			});
 	})
 };
 
