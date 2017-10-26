@@ -8,20 +8,22 @@
 <body>
 <header>
 	<div class="wrapper">
-		<form class="form__container">
-			<div class="form__fieldContainer">
-				<label class="form__label form__label--label" for="language">
-					<input type="text" class="form__input form__input--language" id="language" placeholder="Language">
-				</label>
-				<label for="label" class="form__label form__label--label">
-					<input type="text" class="form__input form__input--label" id-"label" placeholder="Beginner">
-				</label>
-			</div>
-			<button class="userSubmit" type="submit">Find Issues</button>
-		</form>
+		<div class="headerContainer">
+			<img class="icon__githubLogo"src="public/assets/icons/mark-github-white.svg" alt="github icon">
+			<form class="form__container">
+				<div class="form__fieldContainer">
+					<label class="form__label form__label--label" for="language">
+						<input type="text" class="form__input form__input--language" id="language" placeholder="Language...">
+					</label>
+					<label for="label" class="form__label form__label--label">
+						<input type="text" class="form__input form__input--label" id-"label" placeholder="Labels...">
+					</label>
+				</div>
+				<button class="userSubmit" type="submit">Find Issues</button>
+			</form>
+		</div>
 	</div>
 </header>
-
 
 <section class="appOutputs">
 	<div class="wrapper">

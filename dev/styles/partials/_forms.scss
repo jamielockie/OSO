@@ -4,9 +4,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-	img {
-		fill: white;	
-	}
+}
+
+.icon__githubLogo {
+    padding-right: 15px;
 }
 
 .form__container {
@@ -29,6 +30,11 @@ header {
     border-radius: 3px;
     padding: 0px 8px;
     color: white;
+    &:focus { 
+        background-color: lighten($background--input,5%);
+        border-bottom: 2px solid lighten($background--input,40%);
+        outline: none; 
+    }
 }
 
 .form__labelContainer {
@@ -40,10 +46,17 @@ header {
     align-items: center;
 }
 
+.headerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .form__label {
-    border: 1px solid $background--dark;
-    background-color: $background--input;
-    min-height: 30px; 
+    // border: 1px solid $background--dark;
+    // background-color: $background--input;
+    // min-height: 30px; 
     // line-height: 30px;
     // border-radius: 3px;
     // padding: 0px 8px;

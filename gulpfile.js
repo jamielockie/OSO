@@ -9,7 +9,7 @@ const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
-const wait = require ('gulp-wait'); 
+// const wait = require ('gulp-wait'); 
 
 gulp.task('styles', () => {
 	return gulp.src('./dev/styles/**/*.scss')
