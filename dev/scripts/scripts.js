@@ -10,7 +10,6 @@ thisApp.repoDescArray = [];
 thisApp.formInputs = {};
 thisApp.formInputs.language = 'JavaScript'
 thisApp.formInputs.label = 'beginner'
-thisApp.formInputs.query = ''
 
 
 thisApp.init = () => {
@@ -28,10 +27,7 @@ thisApp.events = function() {
 		// Grab Input Value and put in formInputs Object
 		thisApp.formInputs.language = $(this).find('.language').val();
 		thisApp.formInputs.label = $(this).find('.label').val();
-		thisApp.formInputs.query = $(this).find('.keyword').val();
-		// console.log(thisApp.formInputs.language)
-		// console.log(thisApp.formInputs.label)
-		// console.log(thisApp.formInputs.query)
+		thisApp.formInputs.keyword = $(this).find('.keyword').val();
 		thisApp.getIssues()
 	});
 };
@@ -42,23 +38,26 @@ thisApp.events = function() {
 thisApp.displayIssues = (issues) => {
 	issues.forEach((issue, index) => {
 		// console.log(issue)
+		// console.log(issue)
+		let urlStringArray = `${issue.html_url}`.split("/")
+		// console.log(urlStringArray)
+
 		const labels = issue.labels
 		const $container = $('<li>').addClass('card__container');
 		const $issueName = $('<h5>').text(issue.title);
 		const $cardByline = $('<h6>').text(issue.user.login);
 		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Repo Link</a>`);
-		let urlStringArray = `${issue.html_url}`.split("/")
-		console.log(urlStringArray)
-		const $repoName = $(`<h1>`).text(urlStringArray[3]);
-		const $repoDesc = $(`<h4>`).text(thisApp.repoDescArray[index]);
+		
+		const $repoName = $(`<h2>`).text(urlStringArray[3]);
 
-		$container.append($repoName,$repoDesc,$issueName,$cardByline,$cardLink);
+		$container.append($repoName,$issueName,$cardByline,$cardLink);
+		const $labelContainer = $('<ul>').addClass('label__container');
 		labels.forEach((label) => {
-			thisApp.labels = $(`<p>${label.name}</p>`).addClass('label');
-
-			$container.append(thisApp.labels);
+			const $labels = $(`<li>${label.name}</li>`).addClass('label');
+			$labelContainer.append($labels);
+			$container.append($labelContainer);
 		})
-		$('.gallery').append($container);
+		$('.cardsContainer').append($container);
 	});
 };
 
@@ -77,28 +76,7 @@ thisApp.getIssues = () => {
 	})
 	.then(function(res) {
 		const issues = res.items;
-		// console.log(issues)
-		res.items.forEach((repo) => {
-			let repoUrl = repo.repository_url;
-			const repoCall = $.ajax({
-				url: repoUrl,
-				method:'GET',
-				dataType: 'json',
-				data: {
-					// token: thisApp.token
-				},
-			})
-			.then(function(res) {
-				// console.log(res)
-				// console.log(res)
-				const repoName = res.name
-				// console.log(repoName)
-				thisApp.repoNameArray.push(repoName);
-
-				const repoDesc = res.description
-				thisApp.repoDescArray.push(repoDesc) 
-			})
-		})
+		console.log(issues)
 		$.when(issueCall)
 			.then(function() {
 				thisApp.displayIssues(issues);

@@ -7,20 +7,26 @@
 </head>
 <body>
 <header>
-
-	<form class="userInputs">
-	<label for="language">Language</label>
-	<input type="text" class="language" id="language" placeholder="JavaScript">
-	<label for="label">Labels</label>
-	<input type="text" class="label" placeholder="Beginner">
-	<label for="keyword">keyword</label>
-	<input type="text" class="keyword" placeholder="keyword">
-	<button class="userSubmit" type="submit">Find Issues</button>
-	<form>
+	<div class="wrapper">
+		<form class="userInputs">
+		<label for="language">Language</label>
+		<input type="text" class="language" id="language" placeholder="JavaScript">
+		<label for="label">Labels</label>
+		<input type="text" class="label" placeholder="Beginner">
+		<!-- <label for="keyword">keyword</label>
+		<input type="text" class="keyword" placeholder="keyword"> -->
+		<button class="userSubmit" type="submit">Find Issues</button>
+		<form>
+	</div>
 </header>
 
-<section class="gallery">
-	
+
+<section class="appOutputs">
+	<div class="wrapper">
+		<ul class="cardsContainer">
+			<!-- dynamically populated cards -->
+		</ul>
+	</div>
 </section>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

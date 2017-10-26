@@ -1,7 +1,23 @@
-.gallery {
+.header {
+	height: 54px;
+	background-color: $background--dark;
+}
+
+.cardContainer {
 	display: grid;
 }
 
-.card__container {
-
+.label__container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	li {
+		padding: 3px 4px;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1;
+		color: black;
+		border-radius: 2px;
+	}
 }
+
