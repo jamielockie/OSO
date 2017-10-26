@@ -1,6 +1,12 @@
-.header {
+header {
 	height: 54px;
 	background-color: $background--dark;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	img {
+		fill: white;	
+	}
 }
 
 .cardContainer {

@@ -9,6 +9,7 @@ const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
+const wait = require ('gulp-wait'); 
 
 gulp.task('styles', () => {
 	return gulp.src('./dev/styles/**/*.scss')
@@ -47,3 +48,9 @@ gulp.task('default', ['bs','js','styles'], () => {
 	gulp.watch('dev/**/*.scss',['styles']);
 	gulp.watch('./public/styles/style.css',reload);
 });
+
+gulp.task('wait', function() {
+    gulp.src('dev/**/*.scss')
+        .pipe(wait(1500))
+        .pipe(gulp.dest('.public/styles/style.css'));
+  });
