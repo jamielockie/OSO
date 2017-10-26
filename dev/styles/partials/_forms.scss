@@ -1,9 +1,43 @@
+header {
+	height: 54px;
+    background-color: $background--dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	img {
+		fill: white;	
+	}
+}
+
+.form__container {
+    width: 100%;
+    display: flex;
+	justify-content: space-between;
+    align-content: center;
+}
+
+.form__fieldContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .form__input {
     border: 1px solid $background--dark;
     background-color: $background--input;
+    font-size: 14px;
     min-height: 30px; 
     border-radius: 3px;
-    padding-left: 0x 8px;
+    padding: 0px 8px;
+    color: white;
+}
+
+.form__labelContainer {
+    display: inline-block;
+    background-color: $background--input;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form__label {
@@ -11,7 +45,7 @@
     background-color: $background--input;
     min-height: 30px; 
     // line-height: 30px;
-    border-radius: 3px;
-    padding-left: 0x 8px;
+    // border-radius: 3px;
+    // padding: 0px 8px;
 }
 

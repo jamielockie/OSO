@@ -8,15 +8,17 @@
 <body>
 <header>
 	<div class="wrapper">
-		<form class="userInputs">
-		<label class="form__label form__label--label" for="language">Language</label>
-		<input type="text" class="form__input form__input--language" id="language" placeholder="JavaScript">
-		<label for="label" class="form__label form__label--label" >Labels</label>
-		<input type="text" class="form__input form__input--language" id-"label" placeholder="Beginner">
-		<!-- <label for="keyword">keyword</label>
-		<input type="text" class="keyword" placeholder="keyword"> -->
-		<button class="userSubmit" type="submit">Find Issues</button>
-		<form>
+		<form class="form__container">
+			<div class="form__fieldContainer">
+				<label class="form__label form__label--label" for="language">
+					<input type="text" class="form__input form__input--language" id="language" placeholder="Language">
+				</label>
+				<label for="label" class="form__label form__label--label">
+					<input type="text" class="form__input form__input--label" id-"label" placeholder="Beginner">
+				</label>
+			</div>
+			<button class="userSubmit" type="submit">Find Issues</button>
+		</form>
 	</div>
 </header>
 

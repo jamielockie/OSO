@@ -49,8 +49,8 @@ gulp.task('default', ['bs','js','styles'], () => {
 	gulp.watch('./public/styles/style.css',reload);
 });
 
-gulp.task('wait', function() {
-    gulp.src('dev/**/*.scss')
-        .pipe(wait(1500))
-        .pipe(gulp.dest('.public/styles/style.css'));
-  });
+// gulp.task('wait', function() {
+//     gulp.src('dev/**/*.scss')
+//         .pipe(wait(1500))
+//         .pipe(gulp.dest('.public/styles/style.css'));
+// 	});

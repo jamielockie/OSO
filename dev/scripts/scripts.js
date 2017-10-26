@@ -21,14 +21,16 @@ thisApp.init = () => {
 thisApp.events = function() {
 
 	// on submit of Form element
-	$('.userInputs').on('submit', function(e) { 
+	$('.form__container').on('submit', function(e) { 
 		e.preventDefault();
-		$('.gallery').empty();
+		$('.cardsContainer').empty();
 		// Grab Input Value and put in formInputs Object
-		thisApp.formInputs.language = $(this).find('.language').val();
-		thisApp.formInputs.label = $(this).find('.label').val();
-		thisApp.formInputs.keyword = $(this).find('.keyword').val();
+		thisApp.formInputs.language = $(this).find('.form__input--language').val();
+		
+		thisApp.formInputs.label = $(this).find('.form__input--label').val();
+		// thisApp.formInputs.keyword = $(this).find('.keyword').val();
 		thisApp.getIssues()
+		console.log(thisApp.formInputs)
 	});
 };
 
