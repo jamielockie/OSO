@@ -48,7 +48,7 @@ thisApp.displayIssues = (issues) => {
 		const labels = issue.labels
 		const $container = $('<li>').addClass('card__container');
 		const $issueName = $('<h3>').text(issue.title).addClass('card__desc');
-		const $cardByline = $('<h6>').text(issue.user.login);
+		const $cardByline = $('<h5>').text(issue.user.login).addClass('card__user');
 		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Contribute!</a>`).addClass('card__link');
 		
 		const $repoName = $(`<h2>${urlStringArray[3]} / ${urlStringArray[4]}</h2>`).addClass('card__title');

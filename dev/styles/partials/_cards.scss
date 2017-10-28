@@ -1,15 +1,50 @@
 .card__container {
-	width: 40%;
-	// margin: auto;	
+	width: 80%;
+    // margin: auto;	
+    position: relative;
+    border: 1px solid $background--lightGrey;
+    background-color: white;
+    padding: 15px;
+}
+
+.card__title {
+    font-size: $xl;
+    font-weight: $bold;
+    color: $darkGrey;
+}
+
+.card__desc {
+    font-size: $base;
+    // font-weight: $regular;
+    color: $mediumGrey;
+}
+
+.card__link {
+    font-size: $sm;
+    // font-weight: $regular;
+    color: $accentBase;     
+}
+
+.card__user {
+    font-size: $xs;
+    font-weight: bold;
+    color: $mediumGrey;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: o;
+    display: inline-block;
 }
 
 .card__label {
-    padding: 3px 4px;
     font-size: 12px;
-    font-weight: 600;
+    // font-weight: 600;
+    padding: 3px 4px;
     line-height: 1;
-    color: black;
+    color: #30373F;
+    margin: 0px 10px;
     border-radius: 2px;
+    background-color: $background--lightGrey;
 }
 
 .card__labelContainer {
