@@ -48,16 +48,17 @@ thisApp.displayIssues = (issues) => {
 		const labels = issue.labels
 		const $container = $('<li>').addClass('card__container');
 		const $issueName = $('<h3>').text(issue.title).addClass('card__desc');
-		const $cardByline = $('<h5>').text(issue.user.login).addClass('card__user');
-		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Contribute!</a>`).addClass('card__link');
+		const $cardByline = $(`<p>Issue opened by <a class="card__user--link" href="https://github.com/${issue.user.login}">${issue.user.login}</a></p>`).addClass('card__user');
+		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Go to Issue</a>`).addClass('card__link, btn--crisp');
 		
 		const $repoName = $(`<h2>${urlStringArray[3]} / ${urlStringArray[4]}</h2>`).addClass('card__title');
+		
 
-		$container.append($repoName,$issueName,$cardByline,$cardLink);
+		$container.append($repoName,$issueName,$cardByline);
 		const $labelContainer = $('<ul>').addClass('card__labelContainer');
 		labels.forEach((label) => {
 			const $labels = $(`<li>${label.name}</li>`).addClass('card__label');
-			$labelContainer.append($labels);
+			$labelContainer.append($labels, $cardLink);
 			$container.append($labelContainer);
 		})
 		$('.cardsContainer').append($container);

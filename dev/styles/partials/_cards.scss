@@ -5,6 +5,13 @@
     border: 1px solid $background--lightGrey;
     background-color: white;
     padding: 15px;
+    border-top: 3px solid $accentBase;
+    border-radius: 3px;
+    margin: 0.5rem 0rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+
 }
 
 .card__title {
@@ -14,8 +21,8 @@
 }
 
 .card__desc {
-    font-size: $base;
-    // font-weight: $regular;
+    font-size: $sm;
+    font-weight: $regular;
     color: $mediumGrey;
 }
 
@@ -23,6 +30,7 @@
     font-size: $sm;
     // font-weight: $regular;
     color: $accentBase;     
+    margin-right: 30px;
 }
 
 .card__user {
@@ -34,6 +42,10 @@
     right: 15px;
     margin: o;
     display: inline-block;
+}
+
+.card__user--link {
+    color: $accentBase;
 }
 
 .card__label {
@@ -48,7 +60,12 @@
 }
 
 .card__labelContainer {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+    display: flex;
+    width: 100%;
+    float: right;
+	justify-content: flex-end;
+    align-items: center;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    margin-top: 20px;
 }
