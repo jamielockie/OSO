@@ -3,8 +3,13 @@ header {
     background-color: $background--dark;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;   
+    border-bottom: 2px solid $background--dark; 
 }
+
+// .header__progressBar {
+//     border-bottom: 2px solid blue;
+// }
 
 .icon__githubLogo {
     padding-right: 15px;
@@ -73,6 +78,7 @@ nav {
     margin: 0;
     color: rgba(225,225,225,0.75);
     margin-right: 30px;
+    cursor: pointer;
     &:hover {
         color: white;
     }

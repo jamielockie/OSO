@@ -42,20 +42,21 @@ thisApp.displayIssues = (issues) => {
 		// console.log(issue)
 		// console.log(issue)
 		let urlStringArray = `${issue.html_url}`.split("/")
+		console.log(urlStringArray)
 		// console.log(urlStringArray)
 
 		const labels = issue.labels
 		const $container = $('<li>').addClass('card__container');
-		const $issueName = $('<h5>').text(issue.title);
+		const $issueName = $('<h3>').text(issue.title).addClass('card__desc');
 		const $cardByline = $('<h6>').text(issue.user.login);
-		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Repo Link</a>`);
+		const $cardLink = $(`<a href=${ issue.html_url} target="_blank">Contribute!</a>`).addClass('card__link');
 		
-		const $repoName = $(`<h2>`).text(urlStringArray[3]);
+		const $repoName = $(`<h2>${urlStringArray[3]} / ${urlStringArray[4]}</h2>`).addClass('card__title');
 
 		$container.append($repoName,$issueName,$cardByline,$cardLink);
-		const $labelContainer = $('<ul>').addClass('label__container');
+		const $labelContainer = $('<ul>').addClass('card__labelContainer');
 		labels.forEach((label) => {
-			const $labels = $(`<li>${label.name}</li>`).addClass('label');
+			const $labels = $(`<li>${label.name}</li>`).addClass('card__label');
 			$labelContainer.append($labels);
 			$container.append($labelContainer);
 		})
@@ -73,7 +74,7 @@ thisApp.getIssues = () => {
 			// user-agent: 'jamielockie'
 			// token: thisApp.token,
 			q: `is:public is:open label:"help wanted" label:${thisApp.formInputs.label} language:${thisApp.formInputs.language}`,
-			sort: 'created',
+			sort: 'updated',
 			},
 	})
 	.then(function(res) {
@@ -82,6 +83,7 @@ thisApp.getIssues = () => {
 		$.when(issueCall)
 			.then(function() {
 				thisApp.displayIssues(issues);
+				// $('header').addClass('header__progressBar');
 			});
 	})
 };

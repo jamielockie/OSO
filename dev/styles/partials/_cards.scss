@@ -1,0 +1,19 @@
+.card__container {
+	width: 40%;
+	// margin: auto;	
+}
+
+.card__label {
+    padding: 3px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    color: black;
+    border-radius: 2px;
+}
+
+.card__labelContainer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
