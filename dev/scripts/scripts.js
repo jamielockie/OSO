@@ -55,10 +55,12 @@ thisApp.displayIssues = (issues) => {
 		
 
 		$container.append($repoName,$issueName,$cardByline);
-		const $labelContainer = $('<ul>').addClass('card__labelContainer');
+		const $labelContainer = $('<div>').addClass('card__labelContainer');
+		const $labelTagContainer = $('<ul>').addClass('card__labelTagContainer');
 		labels.forEach((label) => {
 			const $labels = $(`<li>${label.name}</li>`).addClass('card__label');
-			$labelContainer.append($labels, $cardLink);
+			$labelTagContainer.append($labels);
+			$labelContainer.append($cardLink, $labelTagContainer,)
 			$container.append($labelContainer);
 		})
 		$('.cardsContainer').append($container);

@@ -27,19 +27,19 @@ h1, h2, h3, h4, h5, h6 {
 // MQs
 
 @mixin respond-to($breakpoint) {
-	@if $breakpoint == "smallPhone" {
+	@if $breakpoint == "small" {
 		@media (max-width: 320px) {
 			@content;
 		}
 }
 
-	@else if $breakpoint == "phone" {
-		@media (max-width: 500px) {
+	@else if $breakpoint == "medium" {
+		@media (max-width: 786px) {
 			@content;
 		}
 }
 
-	@else if $breakpoint == "tablet" {
+	@else if $breakpoint == "large" {
 		@media (max-width: 880px) {
 			@content;
 		}
