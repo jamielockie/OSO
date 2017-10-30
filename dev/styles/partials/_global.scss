@@ -1,3 +1,8 @@
+body {
+	font-family: 'roboto', sans-serif;
+
+}
+
 ul {
 	margin: 0;
 	padding: 0;
@@ -7,6 +12,7 @@ li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	
 }
 
 a {
@@ -15,9 +21,10 @@ a {
 }
 
 .wrapper {
-	max-width: 980px;
+	max-width: 1200px;
 	width: 100%;
 	margin: auto;
+	padding: 0em 2em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,19 +35,19 @@ h1, h2, h3, h4, h5, h6 {
 
 @mixin respond-to($breakpoint) {
 	@if $breakpoint == "small" {
-		@media (max-width: 320px) {
+		@media (max-width: 440px) {
 			@content;
 		}
 }
 
 	@else if $breakpoint == "medium" {
-		@media (max-width: 786px) {
+		@media (max-width: 600px) {
 			@content;
 		}
 }
 
 	@else if $breakpoint == "large" {
-		@media (max-width: 880px) {
+		@media (max-width: 786px) {
 			@content;
 		}
 	}

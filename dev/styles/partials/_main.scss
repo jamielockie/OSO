@@ -1,9 +1,15 @@
 .appOutputs {
-	background-color: $background--lightGrey;
-	padding: 1em;
+	background-color: $background--mediumGrey;
+	padding: 2em 0em;
 }
 .cardsContainer {
 	display:grid;
-	background-color: $background--lightGrey;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+
+	background-color: $background--mediumGrey;
+	@include respond-to("medium") {
+		grid-template-columns: 1fr;
+	}
 }
 

@@ -1,38 +1,31 @@
 .userSubmit {
-    background-color: $background--input;
-    border: 1px solid $background--dark;
-    max-height: 30px;
-    color: rgba(255,255,255,0.75);
-    font-size: $xs;
-    border-radius: 3px;
+	background-color: $background--input;
+	border: 1px solid $background--dark;
+	max-height: 30px;
+	color: rgba(255,255,255,0.75);
+	font-size: $xs;
+	border-radius: 3px;
 }
 
 .btn--crisp{
-    width: 140px;
-    font-size: $xs;
-    font-weight: $bold;
-    color: $accentBase;
-    line-height: 2;
-    padding: .3em 1em;
-    background: $background--lightGrey;
-    border: 1px solid $accentBase;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
-    border-radius: 5px;
-    transition: border 0.2s;
-    // margin-right: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    &:hover {
-        border: 1px solid darken($accentBase, 10);
-        // background: white;
-        transition: border 0.3s;
-      }
-    &:active {
-        box-shadow: none;
-        transform:translateY(2px)
-    }
+	width: 140px;
+	font-size: $xs;
+	font-weight: $bold;
+	color: $accentBase;
+	line-height: 2;
+	padding: .3em 1em;
+	background: $background--lightGrey;
+	border: 1px solid $accentBase;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
+	border-radius: 5px;
+	transition: border 0.2s;
+	&:hover {
+		border: 1px solid darken($accentBase, 10);
+		// background: white;
+		transition: border 0.3s;
+	  }
+	&:active {
+		box-shadow: none;
+		transform:translateY(2px)
+	}
   }

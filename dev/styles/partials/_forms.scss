@@ -1,16 +1,15 @@
 header {
-	// height: 54px;
     background-color: $background--dark;
     display: flex;
     justify-content: space-between;
     align-items: center;   
     border-bottom: 2px solid $background--dark; 
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    top: 0;
 }
-
-// .header__progressBar {
-//     border-bottom: 2px solid blue;
-// }
 
 .icon__githubLogo {
     padding-right: 15px;
@@ -63,7 +62,7 @@ header {
 nav { 
     display: flex;
     align-items: center;
-    @include respond-to("medium") {
+    @include respond-to("large") {
         display: none;
     }
 }

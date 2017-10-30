@@ -18,6 +18,9 @@
 	font-size: $xl;
 	font-weight: $bold;
 	color: $darkGrey;
+	span {
+		font-weight: $regular;
+	}
 }
 
 .card__desc {
@@ -26,16 +29,22 @@
 	color: $mediumGrey;
 }
 
+.card__link {
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	margin: 15px 0px;
+}
 
 .card__user {
 	font-size: $xs;
 	font-weight: bold;
 	color: $mediumGrey;
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	margin: 0;
-	display: inline-block;
+	// position: absolute;
+	// top: 15px;
+	// right: 15px;
+	// margin: 0;
+	// display: inline-block;
 }
 
 .card__user--link {
@@ -56,19 +65,40 @@
 
 .card__labelContainer {
 	display: flex;
-	margin-top: 20px;
+	margin: 20px 0px 0px 0px;
 	justify-content: space-between;
+	align-items: center;
+	@include respond-to("large") {
+		flex-direction: column-reverse;
+	}
+	@include respond-to("medium") {
+		flex-direction: row;
+	}
+	@include respond-to("small") {
+		flex-direction: column-reverse;
+	}
 
 
 }
 
 .card__labelTagContainer {
 	display: flex;
-	width: 80%;
+	width: 100%;
 	// float: right;
 	// justify-content: flex-end;
 	align-items: center;
-	flex-direction: row-reverse;
+	// flex-direction: row-reverse;
 	// align-self: flex-end;
 	flex-wrap: wrap;
+	justify-content: flex-end;
+	@include respond-to("large") {
+		justify-content: space-between;
+		// flex-flow: row wrap;
+	}
+	@include respond-to("medium") {
+		justify-content: flex-end;
+	}
+	@include respond-to("small") {
+		justify-content: space-between;
+	}
 }
