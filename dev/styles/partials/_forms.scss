@@ -1,14 +1,11 @@
 header {
+	// height: 54px;
     background-color: $background--dark;
     display: flex;
     justify-content: space-between;
     align-items: center;   
     border-bottom: 2px solid $background--dark; 
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    top: 0;
 }
 
 .icon__githubLogo {
@@ -62,11 +59,10 @@ header {
 nav { 
     display: flex;
     align-items: center;
-    @include respond-to("large") {
+    @include respond-to("medium") {
         display: none;
     }
 }
-
 .nav__link {
     font-size: $base;
     font-weight: $bold;
@@ -78,4 +74,3 @@ nav {
         color: white;
     }
 }
-
