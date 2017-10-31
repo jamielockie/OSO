@@ -2,8 +2,9 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-start;
+	margin-top: 60px;
 	@include respond-to("large") {
 		flex-direction: column;
-		justify-content: center;
+		align-items: center;
 	}
 }	
