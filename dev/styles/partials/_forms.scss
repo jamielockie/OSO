@@ -28,7 +28,7 @@ header {
         display: flex;
         justify-content: center;
     };
-    * {
+    input {
         width: 100%;
     }
 }
@@ -38,6 +38,7 @@ header {
     flex-direction: row;
     @include respond-to("small") {
         flex-direction: column;
+        width: 100%;
     };
 }
 

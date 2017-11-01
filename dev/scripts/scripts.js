@@ -15,6 +15,7 @@ thisApp.formInputs.label = 'beginner'
 thisApp.init = () => {
 	thisApp.getIssues()
 	thisApp.events()
+	thisApp.plugins()
 };
 
 thisApp.events = function() {
@@ -30,9 +31,6 @@ thisApp.events = function() {
 		console.log(thisApp.formInputs)
 	});
 };
-
-
-
 
 thisApp.displayIssues = (issues) => {
 	issues.forEach((issue, index) => {
@@ -82,6 +80,14 @@ thisApp.getIssues = () => {
 				thisApp.displayIssues(issues);
 			});
 	})
+};
+
+thisApp.plugins = () => {
+	$('.tip').tipr({
+		'speed': 300,
+		'mode': 'above',
+		'space': 70
+   });
 };
 
 $(thisApp.init);
