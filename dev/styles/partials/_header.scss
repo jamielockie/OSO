@@ -66,6 +66,10 @@ header {
     align-items: center;
 }
 
+.form__label--label {
+    position: relative;
+}
+
 .headerContainer {
     display: flex;
     justify-content: space-between;
