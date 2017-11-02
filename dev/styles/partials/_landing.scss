@@ -1,12 +1,14 @@
 .landing__container {
 	display: flex;
-	justify-content: space-around;
-	align-items: flex-start;
-	margin-top: 60px;
+	justify-content: center;
+	align-items: center;
+	margin-top: 47px;
 	padding: 15px;
-	p {
-		line-height: 2em;
-		text-align: center;
+	h3 {
+		line-height: 40px;
+		@include respond-to("large") {
+		margin-left: 60px;
+		};
 	}
 	@include respond-to("large") {
 		flex-direction: column;
@@ -17,6 +19,23 @@
 	};
 }	
 
+.landing__logoContainer {
+	padding-right: 30px;	
+}
+
+.landing__welcome {
+	display: flex;
+	flex-direction: column;
+}
+
 .card__title--landing .card__desc--landing {
 	text-align: center;
+}
+
+.landing__welcome {
+	display: flex;
+	align-items: center;
+	svg {
+		margin-right: 20px;
+	}
 }
