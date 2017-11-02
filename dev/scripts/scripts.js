@@ -3,7 +3,7 @@ thisApp.endpoint = 'https://api.github.com/search/issues';
 thisApp.userAgent = 'jamielockie'; 
 thisApp.token = 'c10b97525d3cb61ee37390069c16765fd75f05';
 thisApp.label__primary = "beginner";
-// thisApp.repoArray = [];
+thisApp.repoArray = [];
 thisApp.repoNameArray = [];
 thisApp.repoDescArray = [];
 
@@ -29,7 +29,9 @@ thisApp.events = function() {
 };
 
 thisApp.displayIssues = (issues) => {
+	thisApp.repoArray.splice(0, thisApp.repoArray.length);
 	issues.forEach((issue, index) => {
+		thisApp.repoArray.push(issue);
 		let urlStringArray = `${issue.html_url}`.split("/")
 		const labels = issue.labels
 		const $container = $('<li>').addClass('card__container');
@@ -48,17 +50,23 @@ thisApp.displayIssues = (issues) => {
 		})
 		$('.cardsContainer').append($container);
 	});
+	if (thisApp.repoArray.length == 0) {
+		swal({
+			title: "Uh oh!",
+			text: `Try using a label like "beginner", "hacktoberfest", or "up-for-grabs"`,
+			icon: "error",
+			buttons: "Try Again!",
+			closeModal: true
+		});
+	}
 };
 
 thisApp.getIssues = () => {
-	// Makes initial Ajax call to get object of issues
 	const issueCall = $.ajax({
 		url: thisApp.endpoint,
 		method: 'GET',
 		dataType:'json',
 		data: {
-			// user-agent: 'jamielockie'
-			// token: thisApp.token,
 			q: `is:public is:open label:"help wanted" label:${thisApp.formInputs.label} language:${thisApp.formInputs.language}`,
 			sort: 'updated',
 			},

@@ -24,6 +24,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-right: 60px;
+	@include respond-to("medium") {
+		margin-right: 0;
+	};
 }
 
 .card__title--landing .card__desc--landing {
