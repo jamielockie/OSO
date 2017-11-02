@@ -18,6 +18,7 @@
 	font-size: $xl;
 	font-weight: $bold;
 	color: $darkGrey;
+	padding-bottom: 0.5em;
 	span {
 		font-weight: $regular;
 	}
@@ -26,7 +27,7 @@
 .card__desc {
 	font-size: $sm;
 	font-weight: $regular;
-	color: $mediumGrey;
+	color: $darkGrey;
 }
 
 .card__link {
@@ -38,8 +39,7 @@
 
 .card__user {
 	font-size: $xs;
-	font-weight: bold;
-	color: $mediumGrey;
+	color: $lightGrey;
 }
 
 .card__user--link {

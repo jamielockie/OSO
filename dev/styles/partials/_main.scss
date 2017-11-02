@@ -13,3 +13,8 @@
 	}
 }
 
+.wrapper--main {
+	@include respond-to("small") {
+		padding: 0 0.5em;
+	};
+}
