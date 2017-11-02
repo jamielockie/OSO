@@ -4,20 +4,11 @@
 	align-items: center;
 	margin-top: 47px;
 	padding: 15px;
-	h3 {
-		line-height: 40px;
-		@include respond-to("large") {
-		margin-left: 60px;
-		};
-	}
-	@include respond-to("large") {
-		flex-direction: column;
-		align-items: center;
-	}
-	@include respond-to("small") {
-		margin-top: 100px;
-	};
 }	
+
+.landing__flexContainer {
+	display: flex;
+}
 
 .landing__logoContainer {
 	padding-right: 30px;	
@@ -26,10 +17,15 @@
 .landing__welcome {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 }
 
 .card__title--landing .card__desc--landing {
 	text-align: center;
+}
+
+.card__title--landing {
+	margin-bottom:0.5em;
 }
 
 .landing__welcome {
