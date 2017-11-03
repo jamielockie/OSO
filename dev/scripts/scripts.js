@@ -68,7 +68,7 @@ thisApp.getIssues = () => {
 		dataType:'json',
 		data: {
 			q: `is:public is:open label:"help wanted" label:${thisApp.formInputs.label} language:${thisApp.formInputs.language}`,
-			sort: 'updated',
+			sort: 'created',
 			},
 	})
 	.then(function(res) {

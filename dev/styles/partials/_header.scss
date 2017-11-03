@@ -13,6 +13,8 @@ header {
 
 .icon__githubLogo {
     padding-right: 15px;
+    width: 34px;
+    height: 34px;
     @include respond-to("small") {
         display: none;
     };
